@@ -9,6 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'L9'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
+Plugin 'davidhalter/jedi-vim'
+
 "Call end of vundle"
 call vundle#end()
 filetype plugin indent on
@@ -16,6 +18,9 @@ filetype plugin indent on
 "vim-plug plugin manager"
 call plug#begin(expand('~/.vim/plugged'))
 Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 
@@ -31,14 +36,17 @@ set autoindent
 set number
 
 "Set theme"
-"colorscheme onehalfdark"
-"let g:airline_theme='onehalfdark'"
+"Call nord first otherwise its airline theme doesn't get applied/isn't
+"changeable"
 colorscheme nord
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 set termguicolors
 
 "Create function to change color scheme"
 func! Nord()
     colorscheme nord
+    let g:airline_theme='nord'
 endfu
 com! Nord call Nord()
 
