@@ -23,6 +23,9 @@ Plugin 'ycm-core/YouCompleteMe'
 "git management tool"
 Plugin 'tpope/vim-fugitive'
 
+"git management tool2"
+Plugin 'airblade/vim-gitgutter'
+
 "Call end of vundle"
 call vundle#end()
 filetype plugin indent on
