@@ -7,8 +7,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 "call optional vundle plugins below"
 Plugin 'L9'
-"Onedark font"
+"Onedark them"
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+"code-dark theme"
+Plugin 'tomasiser/vim-code-dark'
 
 "Python jedi autocomplete/SAS analyzer"
 "Plugin 'davidhalter/jedi-vim'"
@@ -32,8 +34,15 @@ filetype plugin indent on
 
 "vim-plug plugin manager"
 call plug#begin(expand('~/.vim/plugged'))
-"Nord font"
+"Nord theme"
 Plug 'arcticicestudio/nord-vim'
+
+"Ayu theme"
+Plug 'ayu-theme/ayu-vim'
+
+"OneDarkAtom theme"
+Plug 'joshdick/onedark.vim'
+
 "Airline bottom status bar"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -56,6 +65,9 @@ set autoindent
 "Set numbers/show line numbers"
 set number
 
+"Turn off bell"
+set belloff=all
+
 "Set theme"
 "Call nord first otherwise its airline theme doesn't get applied/isn't
 "changeable"
@@ -64,6 +76,9 @@ colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
+
+"Run NERDTree at start"
+autocmd VimEnter * NERDTree
 
 "Create function to change color scheme"
 func! Nord()
@@ -79,6 +94,32 @@ func! OneDark()
     "hi Normal guibg=NONE ctermbg=NONE"
 endfu
 com! OneDark call OneDark()
+
+
+func! CodeDark()
+    colorscheme codedark
+    execute 'AirlineTheme codedark'
+    "hi Normal guibg=NONE ctermbg=NONE"
+endfu
+com! CodeDark call CodeDark()
+
+
+func! Ayu()
+    let ayucolor="dark"
+    colorscheme ayu
+    "hi Normal guibg=NONE ctermbg=NONE"
+endfu
+com! Ayu call Ayu()
+
+func! AtomDark()
+    let ayucolor="dark"
+    colorscheme onedark
+    execute 'AirlineTheme onedark'
+    "hi Normal guibg=NONE ctermbg=NONE"
+endfu
+com! AtomDark call AtomDark()
+
+
 
 func! Transparent()
     hi Normal guibg=NONE ctermbg=NONE
