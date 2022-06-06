@@ -28,6 +28,11 @@ Plugin 'tpope/vim-fugitive'
 "git management tool2"
 Plugin 'airblade/vim-gitgutter'
 
+"html plugins"
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'AndrewRadev/tagalong.vim'
+
 "Call end of vundle"
 call vundle#end()
 filetype plugin indent on
@@ -79,6 +84,10 @@ hi Normal guibg=NONE ctermbg=NONE
 
 "Run NERDTree at start"
 autocmd VimEnter * NERDTree
+let g:NERDTreeWinSize=25
+
+"Enable html autocomplete when editing html files"
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 "Create function to change color scheme"
 func! Nord()
