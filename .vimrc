@@ -52,9 +52,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "file explorer with git plugin and icon plugin"
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' |Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree' | Plug 'tsony-tsonev/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
 
-"nerdtree-syntax-highlight"
+"Icon syntax highlighter for nerdtree"
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
@@ -89,9 +89,22 @@ autocmd VimEnter * wincmd p
 let g:NERDTreeWinSize=25
 let g:NERDTreeShowHidden=1
 
-
 "Enable html autocomplete when editing html files"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+"Setup git highligther with git plugin"
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeColorMapCustom = {
+    \ "Modified"  : "#528AB3",  
+    \ "Staged"    : "#538B54",  
+    \ "Untracked" : "#BE5849",  
+    \ "Dirty"     : "#299999",  
+    \ "Clean"     : "#87939A",   
+    \ "Ignored"   : "#808080"   
+    \ }  
+
+
 
 "Create function to change color scheme"
 func! Nord()
