@@ -51,11 +51,11 @@ Plug 'joshdick/onedark.vim'
 "Airline bottom status bar"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"file explorer"
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+"file explorer with git plugin and icon plugin"
+Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' |Plug 'ryanoasis/vim-devicons'
 
-"file icons"
-Plug 'ryanoasis/vim-devicons'
+"nerdtree-syntax-highlight"
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 
@@ -84,7 +84,11 @@ hi Normal guibg=NONE ctermbg=NONE
 
 "Run NERDTree at start"
 autocmd VimEnter * NERDTree
+"Toggle off of NERDTree at start"
+autocmd VimEnter * wincmd p
 let g:NERDTreeWinSize=25
+let g:NERDTreeShowHidden=1
+
 
 "Enable html autocomplete when editing html files"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
