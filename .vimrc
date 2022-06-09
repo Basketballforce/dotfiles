@@ -29,7 +29,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 "html plugins"
-Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'AndrewRadev/tagalong.vim'
 
@@ -61,6 +60,7 @@ Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'sheerun/vim-polyglot'
 
+
 "Icon syntax highlighter for nerdtree"
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
@@ -84,6 +84,7 @@ set belloff=all
 "Call nord first otherwise its airline theme doesn't get applied/isn't
 "changeable"
 colorscheme nord
+colorscheme catppuccin_mocha
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 set termguicolors
@@ -148,8 +149,13 @@ func! Ayu()
 endfu
 com! Ayu call Ayu()
 
+func! Expresso()
+    colorscheme catppuccin_mocha
+    "nhi Normal guibg=NONE ctermbg=NONE"
+endfu
+com! Expresso call Expresso()
+
 func! AtomDark()
-    let ayucolor="dark"
     colorscheme onedark
     execute 'AirlineTheme onedark'
     "hi Normal guibg=NONE ctermbg=NONE"
