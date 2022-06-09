@@ -98,7 +98,7 @@ let g:NERDTreeWinSize=25
 let g:NERDTreeShowHidden=1
 
 set mouse=a               " tell vim to recognize mouse commands in "all" modes
-let g:NERDTreeMouseMode=3
+let g:NERDTreeMouseMode=1
 
 "Enable html autocomplete when editing html files"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
