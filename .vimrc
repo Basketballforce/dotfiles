@@ -20,7 +20,7 @@ Plugin 'tomasiser/vim-code-dark'
 "apt install mono-complete golang nodejs default-jdk npm"
 "cd ~/.vim/bundle/YouCompleteMe
 "python3 install.py --all"
-Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'ycm-core/YouCompleteMe'
 
 "git management tool"
 Plugin 'tpope/vim-fugitive'
@@ -98,7 +98,6 @@ let g:NERDTreeWinSize=25
 let g:NERDTreeShowHidden=1
 
 set mouse=a               " tell vim to recognize mouse commands in "all" modes
-vmap <C-c> "+y            " map ctrl-c to copy a block of text selected by the mouse
 let g:NERDTreeMouseMode=3
 
 "Enable html autocomplete when editing html files"
