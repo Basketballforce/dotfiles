@@ -54,6 +54,13 @@ Plug 'vim-airline/vim-airline-themes'
 "file explorer with git plugin and icon plugin"
 Plug 'preservim/nerdtree' | Plug 'tsony-tsonev/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
 
+Plug 'catppuccin/vim'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'sheerun/vim-polyglot'
+
 "Icon syntax highlighter for nerdtree"
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
@@ -88,6 +95,9 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let g:NERDTreeWinSize=25
 let g:NERDTreeShowHidden=1
+
+set mouse=a
+let g:NERDTreeMouseMode=3
 
 "Enable html autocomplete when editing html files"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
