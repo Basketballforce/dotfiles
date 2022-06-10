@@ -20,7 +20,7 @@ Plugin 'tomasiser/vim-code-dark'
 "apt install mono-complete golang nodejs default-jdk npm"
 "cd ~/.vim/bundle/YouCompleteMe
 "python3 install.py --all"
-"Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 
 "git management tool"
 Plugin 'tpope/vim-fugitive'
@@ -30,7 +30,6 @@ Plugin 'airblade/vim-gitgutter'
 
 "html plugins"
 Plugin 'mattn/emmet-vim'
-Plugin 'AndrewRadev/tagalong.vim'
 
 "Call end of vundle"
 call vundle#end()
@@ -60,6 +59,8 @@ Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'sheerun/vim-polyglot'
 
+"html close tag. An html plugin that actually works"
+Plug 'alvan/vim-closetag'
 
 "Icon syntax highlighter for nerdtree"
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -80,6 +81,13 @@ set number
 "Turn off bell"
 set belloff=all
 
+"map qq = qa"
+:cmap qq :qa
+"map qqa = qa!
+:cmap qqa :qa!
+
+vnoremap <C-c> "+y
+map <C-p> "+P
 "Set theme"
 "Call nord first otherwise its airline theme doesn't get applied/isn't
 "changeable"
@@ -115,7 +123,15 @@ let g:NERDTreeColorMapCustom = {
     \ "Ignored"   : "#808080"   
     \ }  
 
+func! MouseOn()
+    set mouse=a
+endfu
+com! MouseOn call MouseOn()
 
+func! MouseOff()
+    set mouse-=a
+endfun
+com! MouseOff call MouseOff()
 
 "Create function to change color scheme"
 func! Nord()
